@@ -1,5 +1,5 @@
 # Images-to-PDF
-Python script to convert all your .jpg images to a PDF
+
 This Python script converts a collection of image files (PNG and JPG) located in a specified directory into a single PDF file. Below are the requirements and a brief description of what the code does:
 
 ### Requirements:
