@@ -1,26 +1,65 @@
-# Images-to-PDF
+# Images-to-PDF Converter
 
-This Python script converts a collection of image files (PNG and JPG) located in a specified directory into a single PDF file. Below are the requirements and a brief description of what the code does:
+This Python script allows you to convert a collection of images (PNG and JPG) from a specified directory into a single PDF file. It automates the task of merging multiple images into a PDF, providing a simple and efficient way to handle image-to-PDF conversion.
 
-### Requirements:
-1. **Python**: Ensure you have Python installed on your system. You can download and install Python from the official website: https://www.python.org/. Make sure to install Python 3.x.
+## Features
 
-2. **img2pdf**: This script uses the `img2pdf` library to convert image files to PDF. You can install it via pip, the Python package manager. Open a command prompt or terminal and run the following command:
-   ```
+- Supports both **PNG** and **JPG** image formats.
+- Automatically processes all images in the given directory.
+- Outputs a single PDF file with all images combined.
+
+## Prerequisites
+
+Ensure you have the following installed on your system:
+
+1. **Python 3.x**:  
+   You can download and install Python from the official [Python website](https://www.python.org/).
+
+2. **Required Python Library**:  
+   Install the `img2pdf` library, which handles the conversion of images to PDF. You can install it using `pip`:
+   ```bash
    pip install img2pdf
    ```
 
-### Code Description:
-- **`import os`**: This imports the `os` module, which provides functions for interacting with the operating system.
+## Usage
 
-- **`import img2pdf`**: This imports the `img2pdf` module, which is used for converting image files to PDF format.
+1. Clone or download this repository to your local machine.
 
-- **`directory`**: This variable stores the path to the directory containing the image files to be converted.
+2. Make sure you have a directory containing the images you want to convert.
 
-- **`output_file`**: This variable stores the path to the output PDF file that will be generated.
+3. Run the script with the following steps:
 
-- **`image_files`**: This list comprehension iterates over the files in the specified directory (`directory`) and creates a list of file paths for files ending with `.png` or `.jpg`.
+   - Define the directory containing your images and specify the output PDF file path in the script.
+   - Run the script using Python:
+     ```bash
+     python convert_images_to_pdf.py
+     ```
 
-- **`with open(output_file, "wb") as file`**: This opens the output file in binary write mode (`"wb"`), allowing us to write binary data to it. The `with` statement ensures that the file is properly closed after the block of code is executed.
+   The script will process all `.png` and `.jpg` files in the directory and generate a PDF file.
 
-- **`file.write(img2pdf.convert(image_files))`**: This line writes the PDF data generated from the image files to the output file. The `img2pdf.convert()` function takes a list of image file paths as input and returns the corresponding PDF data, which is then written to the output file.
+## Code Overview
+
+1. **Importing Modules**:
+   - `os`: For interacting with the file system and accessing image files.
+   - `img2pdf`: For converting the images to PDF format.
+
+2. **Key Variables**:
+   - `directory`: Path to the folder containing image files.
+   - `output_file`: Path where the resulting PDF will be saved.
+
+3. **Image Selection**:
+   - The script collects all image files (`.png` or `.jpg`) from the specified directory.
+
+4. **PDF Creation**:
+   - The images are converted to PDF using `img2pdf.convert()` and written to the specified output file.
+
+## Example
+
+If you have images stored in the directory `./images`, and want to create a PDF called `output.pdf`, you would edit the script as follows:
+
+```python
+directory = './images'
+output_file = 'output.pdf'
+```
+
+Then, run the script to generate the PDF.
